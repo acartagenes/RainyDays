@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Satisfy&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.min.js"></script>
+    <title>Rainy Days</title>
+   
+   <style>
+        
+        h1{
+            position: absolute;
+            color: #f2c177;
+            width: fit-content%;
+            font-size: 200px;
+            top: 100px;
+            margin: 30px;
+            left: 270px;
+            z-index: 2;
+        }
+
+        .rainy-text{
+            font-family: 'Cinzel', serif;
+            font-family: 'Satisfy', cursive;}
+
+        .canvas{
+            background-image: linear-gradient(#8b8bcc,#021246,#040b4a,#10003a);
+            height:100vh;
+            width: 100vw;
+            ;
+        }
+        .container{
+            position: absolute;
+            width: 1300px;
+            height: 900px;
+        }
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .yellow4 {
+            width: 470px;
+            height: 600px;
+            z-index: 10;
+            left: 45%;
+            top: 15%;
+            position: absolute;
+            opacity: .95;
+        }
+        .yellow4 img {
+            height: 100%;
+            width: 100%;  
+        }
+        .yellow4 :hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+        .yellow3 {
+            width: 530px;
+            height: 570px;
+            z-index: 15;
+            left: 100px;
+            top: 10%;
+            position: absolute;
+            opacity: 1;
+        }
+        .yellow3 img {
+            height: 100%;
+            width: 100%;  
+        }
+        .yellow3 :hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+        .blue2 {
+            width: 300px;
+            height: 400px;
+            z-index: 11;
+            left: 32%;
+            top: 25%;
+            position: absolute;
+            opacity: .95;
+        }
+        .blue2 img {
+            height: 100%;
+            width: 100%;
+        }
+        .blue2 :hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+        .blue1 {
+            width: 700px;
+            height: 300px;
+            z-index: 1;
+            top:60px;
+            left: 0px;
+            position: absolute;
+            opacity: 1;
+        }
+        .blue1 img {
+            height: 100%;
+            width: 100%;  
+        }
+        .blue4 {
+            width: 350px;
+            height: 500px;
+            z-index: 9;
+            left: 65%;
+            bottom: 30%;
+            position: absolute;
+            opacity: 1;
+        }
+        .blue4 img {
+            height: 100%;
+            width: 100%;  
+        }
+        .blue4 :hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+        .iris3 {
+            width: 400px;
+            height: 350px;
+            z-index: 1;
+            top: 20%;
+            left: 4%;
+            position: absolute;
+            opacity: 1;
+        }
+        .iris3 img {
+            height: 100%;
+            width: 100%;  
+        }
+        .blue5 {
+            width: 300px;
+            height: 500px;
+            z-index: 8;
+            bottom: 45%;
+            left: 42%;
+            position: absolute;
+            opacity: 1;
+        }
+        .blue5 img {
+            height: 100%;
+            width: 100%;  
+        }
+        .leaves7 {
+            width: 350px;
+            height: 500px;
+            z-index: 1;
+            left: 45%;
+            bottom: 50%;
+            position: absolute;
+            opacity: 1;
+        }
+        .leaves7 img {
+            height: 100%;
+            width: 100%;  
+        }
+        .iris2 {
+            width: 350px;
+            height: 500px;
+            z-index: 1;
+            left: 65%;
+            bottom: 45%;
+            position: absolute;
+            opacity: 1;
+        }
+        .iris2 img {
+            height: 100%;
+            width: 100%;  
+        }
+        .hummingbird {
+            width: 450px;
+            height: 700px;
+            z-index: 15;
+            left: 0%;
+            top:10%;
+            position: absolute;
+        }
+        .hummingbird :hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+
+        .butterfly{
+            width: 450px;
+            height: 700px;
+            z-index: 10;
+            left: 75%;
+            top:50%;
+            position: absolute;
+        }
+        .butterfly :hover {
+            animation: shake 0.5s;
+            animation-iteration-count: infinite;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="canvas">
+    <div class="container">
+        <h1 class="rainy-text">Rainy Days</h1>
+    <div class="flower"></div>
+        <div class="blue1">
+             <img src="img/blue1.png">
+        </div>
+        <div class="yellow4" onclick="playSound(sound2, yellow4)">
+            <img src="img/yellow4.png">
+        </div>
+        <div class="yellow3" onclick="playSound(sound1, yellow3)">
+            <img src="img/yellow3.png">
+        </div>
+        <div class="blue2" onclick="playSound(sound3, blue2)">
+            <img src="img/blue2.png">
+        </div>
+        <div class="leaves7">
+            <img src="img/leaves7.png">
+        </div>
+        <div class="blue4" onclick="playSound(sound4, blue4)">
+            <img src="img/blue4.png">
+        </div>
+        <div class="iris3">
+            <img src="img/iris3.png">
+        </div>
+        <div class="blue5">
+            <img src="img/blue5.png">
+        </div>
+        <div class="iris2">
+            <img src="img/iris2.png">
+        </div>
+       
+        <div class="hummingbird">
+            <a href="index.html">
+            <img src="img/hummingbird.png" alt="EXIT" style="width:150px;height:100px;"></a>
+        </div>
+        <div class="butterfly">
+            <a href="Accent.html">
+            <img src="img/butterfly2.png" alt="EXIT" style="width:150px;height:100px;"></a>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const yellow3 = document.querySelector('.yellow3');
+    const yellow4 = document.querySelector('.yellow4');
+    const blue2 = document.querySelector('.blue2');
+    const blue4 = document.querySelector('.blue4');
+    const bundle3 = document.querySelector('.bundle3');
+    const sound1 = new Howl({ src: 'sounds/Rainy Days.mp3'})
+    const sound2 = new Howl({ src: 'sounds/Não Se Mate.mp3'})
+    const sound3 = new Howl({ src: 'sounds/Bruised.mp3'})
+    const sound4 = new Howl({ src: 'sounds/No silêncio da noite.mp3'})
+    const sound5 = new Howl({ src: 'sounds/Why is it.mp3'})
+    
+    const playSound = (sound, flower) => {
+        const duration = sound.duration();
+        if(!sound.playing()){
+            sound.play();
+        }
+        sound.on('play', () => fadeFlower(flower,duration));
+    }
+    
+    
+    const fadeFlower = (flower,duration) => {
+        console.log(flower);
+        flower.style.transition = `all ${duration}s ease-in-out`;
+        flower.style.opacity = 0;
+    console.log(fadeFlower);
+    }
+    
+    
+    </script>
+
+
+
+</body>
+</html>
